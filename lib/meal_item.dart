@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mealsapp/meal_detail_screen.dart';
 import './models/meal.dart';
 
 class MealItem extends StatelessWidget {
@@ -38,12 +39,18 @@ class MealItem extends StatelessWidget {
     }
   }
 
-  void selectMeal() {}
+  void selectMeal(BuildContext ctx, Meal meal) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+      return MealDetailScreen(meal);
+    }));
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectMeal,
+      onTap: () {
+         this.selectMeal(context, _meal);
+      },
       child: Card(
         elevation: 5,
         margin: EdgeInsets.all(15),

@@ -8,7 +8,7 @@ import './models/meal.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
   final Category _category;
-
+  static const routeName = '/category-meals';
 
 
 
